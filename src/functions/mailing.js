@@ -60,7 +60,7 @@ function sendAttendanceEmail(name, shift, lesson, subject, links, res) {
             sgMail.setApiKey(process.env.SG_API_KEY);
             const msg = {
                 to: 'tonyvllegas@gmail.com',
-                from: 'coordinacion.software@unedl.edu.mx',
+                from: 'mainsaw_12@live.com.mx',
                 subject: 'Asistencia',
                 html: htmlTemplate,
             };
