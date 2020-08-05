@@ -3,7 +3,7 @@
 const axios = require("axios");
 
 
-function sendAttendanceEmail(name, shift, lesson, subject, links, res) {
+function sendAttendanceEmail(name, shift, lesson, subject, links, date, res) {
 
     // FORMATTING EXAMPLE
     //   name: 'Luis Antonio Villegas Hernández',
@@ -29,12 +29,12 @@ function sendAttendanceEmail(name, shift, lesson, subject, links, res) {
                 if(linkObj.isPermanent){
                     linkListItem+=`<li><a style="text-decoration: none; display: inline-block; 
                     font-size: 19px; padding: 7px; border:1px solid #445359 ; border-radius: 10px; background-color: #20396A ;
-                     color:white ; margin-bottom: 5px;" href="${linkObj.link}">Enlace Permanente</a></li>`;
+                     color:white ; margin-bottom: 5px;" href="${linkObj.link}">Click para ir a enlace Permanente</a></li>`;
                 }
                 else{
                     linkListItem+=`<li><a style="text-decoration: none; display: inline-block; 
                     font-size: 19px; padding: 7px; border:1px solid #445359 ; border-radius: 10px; background-color: #20396A ;
-                     color:white ; margin-bottom: 5px;" href="${linkObj.link}">Enlace No Permanente</a></li>`;
+                     color:white ; margin-bottom: 5px;" href="${linkObj.link}">Click para ir a enlace No Permanente</a></li>`;
                 }
             })
             let linksList=`<ul style="list-style: none;text-align: center; padding:0;">${linkListItem}</ul>`;
@@ -50,7 +50,7 @@ function sendAttendanceEmail(name, shift, lesson, subject, links, res) {
             width="40%" alt="" align="center" cellpadding="20%"> </td></tr><tr bgcolor="#20396A" 
             height="100px"> <td align="center" style="color: white; font-size: 20px; 
             font-weight: bold;" > <p align="center; color: white;"> El profesor ${name} del turno ${shift}
-            <br>realizo el formulario para la materia ${lesson} del tema ${subject}</p></td></tr><tr> <td colspan="7" 
+            <br>realizo el formulario:<br> Materia: ${lesson}<br>Tema: ${subject}<br>Fecha: ${date}</p></td></tr><tr> <td colspan="7" 
             bgcolor="#FFFFFF"> <p align="center"> <font color="#445359" size="+1" face="Trebuchet MS Regular, Arial, Ms Sans Serif"> 
             <br>Links de la tarea <br></font> </p><p align="center"> ${linksList} </p></td></tr><tr> <td colspan="7" 
              bgcolor="#F2B705"> <p align="center" style="margin: 4px;"> <font color="#FFFFFF" size="2" face="Trebuchet MS Regular, Arial, 

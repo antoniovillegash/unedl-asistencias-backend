@@ -4,9 +4,9 @@ const { sendAttendanceEmail } = require('../functions/mailing');
 
 
 attendancesController.createAttendance = (req, res) => {
-  const { name, shift, lesson, subject, links } = req.body;
-  console.log({ name, shift, lesson, subject, links })
-  const result= sendAttendanceEmail(name, shift, lesson, subject, links)
+  const { name, shift, lesson, subject, links,date } = req.body;
+  // console.log({ name, shift, lesson, subject, links })
+  const result= sendAttendanceEmail(name, shift, lesson, subject, links, date)
     res.json(result)
   
   // const newattendance = new attendanceModel({
