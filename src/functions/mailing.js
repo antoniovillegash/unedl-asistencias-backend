@@ -59,8 +59,8 @@ function sendAttendanceEmail(name, shift, lesson, subject, links, date, res) {
             const sgMail = require('@sendgrid/mail');
             sgMail.setApiKey(process.env.SG_API_KEY);
             const msg = {
-                to: 'tonyvllegas@gmail.com',
-                from: 'mainsaw_12@live.com.mx',
+                to: 'asistencias.unedl@gmail.com',
+                from: 'asistencias.unedl@gmail.com',
                 subject: 'Asistencia',
                 html: htmlTemplate,
             };
