@@ -59,8 +59,8 @@ function sendAttendanceEmail(name, shift, lesson, subject, links, date, res) {
             const sgMail = require('@sendgrid/mail');
             sgMail.setApiKey(process.env.SG_API_KEY);
             const msg = {
-                to: 'asistencias.unedl@gmail.com',
-                from: 'asistencias.unedl@gmail.com',
+                to: 'enriquediazpracticas@gmail.com',
+                from: 'enriquediazpracticas@gmail.com',
                 subject: 'Asistencia',
                 html: htmlTemplate,
             };
@@ -97,7 +97,7 @@ function sendResetPasswordEmail(linkToReset, email, res) {
         sgMail.setApiKey(process.env.SG_API_KEY);
         const msg = {
             to: email,
-            from: 'mainsaw_12@live.com.mx',
+            from: 'enriquediazpracticas@gmail.com',
             subject: 'Cambio de contraseña',
             html: htmlTemplate,
         };
