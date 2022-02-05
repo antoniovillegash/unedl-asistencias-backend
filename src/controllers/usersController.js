@@ -176,7 +176,7 @@ usersController.sendLinkRestoreUserPassword = (req, res) => {
                         expiresIn: '2h'
                     }
                 )
-                const linkToReset = req.body.url + '/restore/?token=' + token
+                const linkToReset = 'https://unedl-asistencias.herokuapp.com//restore/?token=' + token
                 //code to send email to user with the linkToReset
                 
                 const result=sendResetPasswordEmail(linkToReset, user.email)
